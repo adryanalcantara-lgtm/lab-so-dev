@@ -1,20 +1,21 @@
-# Atividades 5 e 6 — Questões de síntese
+# Atividades 6 — Questão de síntese
 # Preencha este arquivo durante e após as atividades.
 # ─────────────────────────────────────────────────────
 
-# ATIVIDADE 5 — O shell como JCL moderno
+# ATIVIDADE 6 — O shell como JCL moderno
 
 # O slide da genealogia mostrou que o JCL usava comandos como
-# // ASSIGN SYS004,TAPE para associar um trabalho a um dispositivo.
+# // ASSIGN SYS004,TAPE para associar um job a um dispositivo.
 # No shell moderno, qual mecanismo cumpre papel equivalente?
-# Dê um exemplo concreto do que você usou nesta atividade.
 
 Resposta:
 
+o shell usa números inteiros chamados file descriptors
 
-# ─────────────────────────────────────────────────────
+por padrao, todo processo nasce com tres canais abertos:
 
-# ATIVIDADE 6 — Make
+
+# ATIVIDADE 7 — Make
 
 # 1. O monitor histórico verificava a conclusão de cada job antes
 #    de despachar o próximo. No make, qual mecanismo cumpre esse
@@ -22,10 +23,17 @@ Resposta:
 #    que não mudou?
 
 Resposta 1:
+o make herdou essa logica, mas a elevou a um nível de inteligencia baseado em dependências e estados
+o papel do despachante no make é cumprido pela árvore de dependências
 
+o jobs historico muitas vezes precisava de intervenção manual ou scripts complexos para pular etapas, o make usa a verificação de timestamps do sistema de arquivos
+para cada regra no seu makefile, o make faz uma comparação binaria
 
 # 2. O monitor unificava "supervisor, carregador e rotinas de I/O
 #    sob uma interface textual". O que o Makefile unifica no fluxo
 #    de desenvolvimento moderno?
 
 Resposta 2:
+o makefile atua como uma interface única para uma cadeia de ferramentas que, hoje, é muito mais fragmentada e complexa do que nos tempos do mainframe.
+O Makefile encapsula tudo sob comandos simples como make build ou make lint. Você não precisa saber as flags complexas do compilador; o Makefile as unifica em uma interface textual padronizada.
+O monitor histórico lidava com endereços físicos de memória e canais. O Makefile lida com a abstração de caminhos de sistema e variáveis de ambiente.
