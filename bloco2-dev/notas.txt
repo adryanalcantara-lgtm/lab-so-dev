@@ -6,7 +6,7 @@
 # Quantas linhas tem soma.i? O que o pré-processador expandiu?
 
 Linhas em soma.i: 757
-Observação: Ele expandiu a diretiva #exclude assim aumentando bastante o numero de linhas 
+observação: ele expandiu a diretiva exclude assim aumentando muitoo o numero de linhas 
 
 
 # FASE 2 — Assembly (gcc -S)
