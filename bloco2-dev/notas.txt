@@ -37,7 +37,7 @@ nm soma.o:
         .globl  main
         .type   main, @function
 file
-# Quais símbolos aparecem? O que significa o marcador "U" ao lado
+# Quais símbolos aparecem? O que significa o marcador "U" ao lado 
 # de printf?
 
 Observação sobre nm:
